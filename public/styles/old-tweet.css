@@ -1,0 +1,15 @@
+
+.old-tweet {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-bottom: 30px; 
+}
+
+fieldset {
+  display: flex;
+  height: 200px;
+  width: 1200px;
+  box-sizing: border-box;
+  
+}
