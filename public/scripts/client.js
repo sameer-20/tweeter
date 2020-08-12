@@ -31,6 +31,8 @@ const data = [
 ];
 
 
+// Takes an array of tweet objects and appends each one to the tweets-container
+
 const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -38,12 +40,12 @@ const renderTweets = function(tweets) {
   $('.old-tweet-container').empty();
   for (let tweet of tweets) {
     console.log(tweet);
-    $('.old-tweet-container').append(createTweetElement(tweet));
+    $('.old-tweet-container').prepend(createTweetElement(tweet));
   }
 };
 
 
-/* Code for creating the tweet element */
+// Generates the DOM structure for a tweet, given a tweet object.
 
 const createTweetElement = function(tweet) {
   const $tweet = $(`<article class="old-tweet">
@@ -69,7 +71,24 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function() {
 
-  
   renderTweets(data);
+
+  // Get tweets from the server
+	const getTweets = function () {
+    $.ajax({url: '/tweets', method: 'GET',})
+    .then((response) => {renderTweets(response);});
+  };
+  
+
+  // Submit a new tweet
+  $('#new-tweet-form').submit(function (event) {
+    event.preventDefault();
+    
+    /* Add code to handle error cases */
+
+    $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize(),})
+    .then(function () {getTweets();});
+
+	});
 
 });
