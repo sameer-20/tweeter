@@ -17,13 +17,13 @@ span {
   font-family: "Bungee", sans-serif;
 }
 
-a {
+#nav-tweet-header {
   float: left;
   top: 20px;
   padding: 1.5em;
 }
 
-a1 {
+#nav-flag {
   top: 40px;
   font-size: 25px;
   margin-left: 7.2em;
