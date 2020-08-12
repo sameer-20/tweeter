@@ -1,12 +1,103 @@
 
 .old-tweet {
+  box-sizing: border-box;
+  height: 250px;
+  margin: auto;
+  border: 3px solid;
+  padding: 5px;
+  transition: box-shadow .3s;
+}
+
+.old-tweet-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-bottom: 30px; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.old-tweet:hover #user-handle {
+  display: block;
+}
+
+.old-tweet:hover {
+  box-shadow: 8px 8px 14px rgba(44,44,44,12); 
+}
+
+#user-image {
+  display: flex;
+  color: black;
+  font-size: 60px;
+  padding: 20px;
+}
+
+#user-name {
+  display: flex;
+  position: absolute;
+  margin-left: 60px;
+  color: black;
+  font-size: 25px;
+  padding: 20px;
+  align-items: flex-end;
+  
+}
+
+#user-handle {
+  display: flex;
+  color: red;
+  font-size: 25px;
+  padding: 20px;
+  margin-right: 50px;
+  align-items: flex-end;
+  display: none;
+}
+
+.old-tweet-text {
+  display: flex;
+  flex-direction: row;
+  padding: 10px; 
 }
 
 
+hr {
+  display: flex;
+  width:98%;
+  border: 1.5px solid;
+  margin-left: 10px;
+}
+
+.old-tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size:15px;
+}
+
+.old-tweet-footer > div {
+  display: flex;
+  color: blue;
+  margin-right: 30px;
+}
+
+#tweet-time {
+  display: flex;
+  margin-left: 20px;
+}
+
+#flag-icon {
+  display: flex;
+  margin-right: 10px;
+}
+
+#retweet-icon {
+  display: flex;
+  margin-right: 10px;
+}
+
+#heart-icon {
+  display: flex;
+}
+
+/* 
 fieldset {
   transition: box-shadow .3s;
   display: flex;
@@ -14,18 +105,18 @@ fieldset {
   width: 1200px;
   box-sizing: border-box;
   border: 3px solid; 
-}
+} */
 
-fieldset:hover #user-id {
+/* fieldset:hover #user-id {
   display: block;
 }
 
 fieldset:hover {
   box-shadow: 8px 8px 14px rgba(44,44,44,12); 
-}
+} */
 
 
-#user-image {
+/* #user-image {
   color: black;
   font-size: 60px;
   padding: 10px;
@@ -37,22 +128,23 @@ fieldset:hover {
   padding: 10px;
 }
 
-#user-id {
+#user-handle {
   margin-left: 950px;
   margin-top: -50px;
   color: lightblue;
   padding: 10px;
   display: none;
 }
+ */
 
-strong {
+/* strong {
   position: absolute;
   margin-left: 20px;
   margin-top: 40px;
-}
+} */
 
 
-hr {
+/* hr {
   position: relative;
   width:100%;
   text-align:centre;
@@ -60,9 +152,9 @@ hr {
   border: 1.5px solid;
   margin-top: 90px;
   
-}
+} */
 
-footer {
+/* footer {
   font-size:15px;
   padding: 1em; 
   margin-top: -20px;
@@ -87,3 +179,4 @@ i {
 #heart-icon {
   margin-left: 10px;
 }
+ */
