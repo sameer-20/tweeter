@@ -24,7 +24,8 @@ button {
 	align-items: flex-start;
   background-color: #4056A1;
   color: #ffffff;
-  font-family: "Bungee", sans-serif;
+	font-family: "Bungee", sans-serif;
+	margin-top: 10px;
 }
 
 .counter {
@@ -32,7 +33,9 @@ button {
 	align-items: flex-start;
 	font-weight: bold;
 	justify-content: flex-end;
-	padding-bottom: 4em;	
+	padding-bottom: 4em;
+	margin-top: -30px;
+	font-size: 25px;
 }
 
 
