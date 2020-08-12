@@ -8,7 +8,7 @@ nav {
   background-color: #4056A1;
   color: #ffffff;
   font-family: "Source Sans Pro", sans-serif;
-  padding: 1.5em;
+  
   position: sticky;
   top:0px;
 }
@@ -17,21 +17,24 @@ span {
   float: left;
   font-size: 60px;
   font-family: "Bungee", sans-serif;
+  padding: 1.5em;
+  margin-top: -55px;
+  margin-left: -10px;
 }
 
 #nav-tweet-header {
   float: left;
-  top: 20px;
+  top: 3px;
   padding: 1.5em;
   position:absolute;
   left:1000px;
 }
 
 #arrow-icon {
-  top: 40px;
-  font-size: 25px;
-  margin-left: 30.2em;
-  margin-top: 0.2em;
+  top: 30px;
+  font-size: 27px;
+  margin-left: 22.9em;
+  margin-top: 1em;
   padding: 1.5em; 
   color: red;
 }
