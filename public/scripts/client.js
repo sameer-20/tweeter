@@ -76,19 +76,32 @@ $(document).ready(function() {
   // Get tweets from the server
 	const getTweets = function () {
     $.ajax({url: '/tweets', method: 'GET',})
-    .then((response) => {renderTweets(response);});
+    .then((response) => {
+      renderTweets(response);
+    });
   };
   
 
   // Submit a new tweet
   $('#new-tweet-form').submit(function (event) {
+
+    // To prevent the default form submission behaviour
     event.preventDefault();
     
-    /* Add code to handle error cases */
-
-    $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize(),})
-    .then(function () {getTweets();});
-
+    // Handle error cases when tweet length = 0 or > 140
+    if (!$('#tweet-text').val()) {
+			$('.message-text').text('Naa! You gotta tweet something.');
+		} else if ($('#tweet-text').val().length > 140) {
+			$('.message-text').text("Oops! Text length exceeded.");
+		} else {
+      // Submit if no error
+        $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize(),})
+        .then(function () {
+          getTweets();
+          $('.message-text').text("Yay! Tweet submitted successfully.");
+          $('#tweet-text').val('');
+        });
+    }
 	});
 
 });
