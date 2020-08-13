@@ -49,9 +49,9 @@ button:active {
 	display: flex;
 	padding: 10px;
 	color: red;
-	
+	font-weight: bold;
+	margin: auto;
 }
-
 
 
 

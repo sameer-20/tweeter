@@ -60,8 +60,8 @@ $(document).ready(function() {
       renderTweets(response);
     });
   };
-  
 
+    
   // Submit a new tweet
   $('#new-tweet-form').submit(function (event) {
 
@@ -70,19 +70,20 @@ $(document).ready(function() {
     
     // Handle error cases when tweet length = 0 or > 140
     if (!$('#tweet-text').val()) {
-			$('.message-text').text('Naa! You gotta tweet in something.');
+			$('.message-text').text('*** Naa! You gotta tweet in something. ***');
 		} else if ($('#tweet-text').val().length > 140) {
-			$('.message-text').text("Oops! Tweet length exceeded.");
+			$('.message-text').text("*** Oops! Tweet length exceeded. ***");
 		} else {
       // Submit if no error
         $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize()})
         .then(function () {
           loadTweets();
+          $('.message-text').text("");
           //$('.message-text').text("Yay! Tweet submitted successfully.");
           $('#tweet-text').val('');
           $('.counter').val('140');
         });
     }
-	});
+  });
 
 });
