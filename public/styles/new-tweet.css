@@ -28,6 +28,12 @@ button {
 	margin-top: 10px;
 }
 
+button:active {
+  background-color: #4056A1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .counter {
 	display: flex;
 	align-items: flex-start;
@@ -41,7 +47,9 @@ button {
 
 .message-text {
 	display: flex;
+	padding: 10px;
 	color: red;
+	
 }
 
 
