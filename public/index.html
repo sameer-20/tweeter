@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <!-- Disabling Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -34,10 +38,11 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav> 
-      <span>tweeter</span>
-      <a id="nav-tweet-header"><b>Write</b> a new tweet</a>
-      <i id="arrow-icon" class="fas fa-angle-double-down"></i>
-      
+      <span id="nav-logo">tweeter</span>
+      <div class="nav-box">
+        <a id="nav-text"><b>Write</b>&nbsp;a new tweet</a>
+        <i id="nav-icon" class="fas fa-angle-double-down"></i>
+      </div>   
     </nav>
 
     <header id="nav-header">
@@ -54,10 +59,15 @@
     <main class="container">
       <section class="new-tweet">
         
+        <div class="message-text">
+          <strong></strong>
+        </div>
+        
+                
         <form id="new-tweet-form" method="POST" action="/tweets">
           <label for="tweet-text">
             <b>What are you humming about?</b> 
-            <strong class="message-text"></strong> 
+           <!--  <strong class="message-text"></strong>  -->
           </label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class='tweet-submit'>

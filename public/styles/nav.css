@@ -1,40 +1,48 @@
 /* */
 
-
 nav {
-  display:flex;
+  display: flex;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #ffffff;
   font-family: "Source Sans Pro", sans-serif;
-  
   position: sticky;
   top:0px;
+  align-items: center;
+  padding: 1.5rem;
 }
 
-span {
-  float: left;
+#nav-logo {
   font-size: 60px;
   font-family: "Bungee", sans-serif;
-  padding: 1.5em;
-  margin-top: -55px;
-  margin-left: -10px;
 }
 
-#nav-tweet-header {
-  float: left;
-  top: 3px;
-  padding: 1.5em;
-  position:absolute;
-  left:1000px;
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  padding: 1.5rem;
 }
 
-#arrow-icon {
-  top: 30px;
+#nav-text {
+  margin-top: 0.5rem;
+  margin-left: 43rem;
+}
+
+#nav-icon { 
+  display: flex;
   font-size: 27px;
-  margin-left: 22.9em;
-  margin-top: 1em;
-  padding: 1.5em; 
+  margin-left: 48.5rem;
+  margin-top: 0.3rem;
   color: red;
+  animation-name: animateArrow;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animateArrow {
+  from {margin-top: 0.3rem;}
+  to {margin-top: 0.7rem;}
 }
