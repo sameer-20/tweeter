@@ -80,6 +80,7 @@ $(document).ready(function() {
           loadTweets();
           //$('.message-text').text("Yay! Tweet submitted successfully.");
           $('#tweet-text').val('');
+          $('.counter').val('140');
         });
     }
 	});
