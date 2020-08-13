@@ -23,14 +23,14 @@ const renderTweets = function(tweets) {
 const createTweetElement = function(tweet) {
   const $tweet = $(`<article class="old-tweet">
       <header class="old-tweet-header">
-        <img id="user-image" src='${tweet.user.avatars}'/> 
-        <div id="user-name">${tweet.user.name}</div>
-        <div id="user-handle">${tweet.user.handle}</div>
+        <img id="user-image" src='${escape(tweet.user.avatars)}'/> 
+        <div id="user-name">${escape(tweet.user.name)}</div>
+        <div id="user-handle">${escape(tweet.user.handle)}</div>
       </header>                              
-      <em class="old-tweet-text">${tweet.content.text}</em>
+      <em class="old-tweet-text">${escape(tweet.content.text)}</em>
       <hr>
       <footer class="old-tweet-footer">
-          <small id="tweet-time">${tweet.created_at}</small>
+          <small id="tweet-time">${escape(tweet.created_at)}</small>
           <div>
           <i id="flag-icon" class="fas fa-flag"></i>
           <i id="retweet-icon" class="fas fa-retweet"></i>
@@ -42,11 +42,20 @@ const createTweetElement = function(tweet) {
 };
 
 
+// Function to escape some text - to prevent cross-site(XSS) attack
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
+
 $(document).ready(function() {
 
   // Get tweets from the server
 	const loadTweets = function () {
-    $.ajax({url: '/tweets', method: 'GET',})
+    $.ajax({url: '/tweets', type: 'GET'})
     .then((response) => {
       renderTweets(response);
     });
@@ -66,7 +75,7 @@ $(document).ready(function() {
 			$('.message-text').text("Oops! Tweet length exceeded.");
 		} else {
       // Submit if no error
-        $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize(),})
+        $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize()})
         .then(function () {
           loadTweets();
           //$('.message-text').text("Yay! Tweet submitted successfully.");
