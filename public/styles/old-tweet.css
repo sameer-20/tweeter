@@ -12,8 +12,8 @@
 .old-tweet-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-start;
+  
 }
 
 .old-tweet:hover #user-handle {
@@ -33,6 +33,25 @@
 
 #user-name {
   display: flex;
+  color: black;
+  font-size: 25px;
+  margin-top: 3rem;  
+}
+
+#user-handle {
+  display: flex;
+  color: rgb(144, 144, 211);
+  font-size: 25px;
+  margin-top: 3rem;
+  margin-left: auto;
+  padding-right: 30px;
+  font-weight: bold;
+  display: none;
+}
+
+
+/* #user-name {
+  display: flex;
   position: absolute;
   margin-left: 60px;
   color: black;
@@ -44,18 +63,22 @@
 
 #user-handle {
   display: flex;
-  color: red;
+  color: rgb(144, 144, 211);
   font-size: 25px;
   padding: 40px;
   margin-right: 50px;
   align-items: flex-end;
+  font-weight: bold;
   display: none;
 }
-
+ */
 .old-tweet-text {
   display: flex;
   flex-direction: row;
-  padding: 10px; 
+  padding: 10px;
+  margin-left: 10px;
+  font-weight: 900;
+  margin-right: 10px;
 }
 
 
