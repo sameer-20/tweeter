@@ -30,7 +30,7 @@ const createTweetElement = function(tweet) {
       <em class="old-tweet-text">${escape(tweet.content.text)}</em>
       <hr>
       <footer class="old-tweet-footer">
-          <small id="tweet-time">${escape(tweet.created_at)}</small>
+          <small id="tweet-time">${escape(moment(tweet.created_at).fromNow())}</small>
           <div>
           <i id="flag-icon" class="fas fa-flag"></i>
           <i id="retweet-icon" class="fas fa-retweet"></i>
@@ -50,7 +50,7 @@ const escape =  function(str) {
 }
 
 
-
+// Fires when DOM is ready
 $(document).ready(function() {
 
   // Get tweets from the server
@@ -79,7 +79,7 @@ $(document).ready(function() {
         .then(function () {
           loadTweets();
           //$('.message-text').text("Yay! Tweet submitted successfully.");
-          $('#tweet-text').val('');    
+          $('#tweet-text').val('');
         });
     }
 	});
