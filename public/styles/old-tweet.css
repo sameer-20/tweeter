@@ -1,3 +1,4 @@
+/* CSS for old-tweet section */
 
 .old-tweet {
   box-sizing: border-box;
@@ -49,29 +50,6 @@
   display: none;
 }
 
-
-/* #user-name {
-  display: flex;
-  position: absolute;
-  margin-left: 60px;
-  color: black;
-  font-size: 25px;
-  padding: 40px;
-  align-items: flex-end;
-  
-}
-
-#user-handle {
-  display: flex;
-  color: rgb(144, 144, 211);
-  font-size: 25px;
-  padding: 40px;
-  margin-right: 50px;
-  align-items: flex-end;
-  font-weight: bold;
-  display: none;
-}
- */
 .old-tweet-text {
   display: flex;
   flex-direction: row;
@@ -121,86 +99,3 @@ hr {
   display: flex;
 }
 
-/* 
-fieldset {
-  transition: box-shadow .3s;
-  display: flex;
-  height: 250px;
-  width: 1200px;
-  box-sizing: border-box;
-  border: 3px solid; 
-} */
-
-/* fieldset:hover #user-id {
-  display: block;
-}
-
-fieldset:hover {
-  box-shadow: 8px 8px 14px rgba(44,44,44,12); 
-} */
-
-
-/* #user-image {
-  color: black;
-  font-size: 60px;
-  padding: 10px;
-}
-
-#user-name {
-  margin-left: 80px;
-  margin-top: -50px;
-  padding: 10px;
-}
-
-#user-handle {
-  margin-left: 950px;
-  margin-top: -50px;
-  color: lightblue;
-  padding: 10px;
-  display: none;
-}
- */
-
-/* strong {
-  position: absolute;
-  margin-left: 20px;
-  margin-top: 40px;
-} */
-
-
-/* hr {
-  position: relative;
-  width:100%;
-  text-align:centre;
-  margin-left:0;
-  border: 1.5px solid;
-  margin-top: 90px;
-  
-} */
-
-/* footer {
-  font-size:15px;
-  padding: 1em; 
-  margin-top: -20px;
-}
-
-
-i {
-  color: blue;
-  
-}
-
-
-#flag-icon {
-  margin-left: 920px;
-}
-
-
-#retweet-icon {
-  margin-left: 10px;
-}
-
-#heart-icon {
-  margin-left: 10px;
-}
- */

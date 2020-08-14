@@ -47,36 +47,36 @@ const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 
 // Fires when DOM is ready
 $(document).ready(function() {
 
   // Get tweets from the server
-	const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({url: '/tweets', type: 'GET'})
-    .then((response) => {
-      renderTweets(response);
-    });
+      .then((response) => {
+        renderTweets(response);
+      });
   };
 
     
   // Submit a new tweet
-  $('#new-tweet-form').submit(function (event) {
+  $('#new-tweet-form').submit(function(event) {
 
     // To prevent the default form submission behaviour
     event.preventDefault();
     
     // Handle error cases when tweet length = 0 or > 140
     if (!$('#tweet-text').val()) {
-			$('.message-text').text('*** Naa! You gotta tweet in something. ***');
-		} else if ($('#tweet-text').val().length > 140) {
-			$('.message-text').text("*** Oops! Tweet length exceeded. ***");
-		} else {
+      $('.message-text').text('*** Naa! You gotta tweet in something. ***');
+    } else if ($('#tweet-text').val().length > 140) {
+      $('.message-text').text("*** Oops! Tweet length exceeded. ***");
+    } else {
       // Submit if no error
-        $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize()})
-        .then(function () {
+      $.ajax({url: '/tweets', type: 'POST', data: $(this).serialize()})
+        .then(function() {
           loadTweets();
           $('.message-text').text("");
           //$('.message-text').text("Yay! Tweet submitted successfully.");
