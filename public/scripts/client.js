@@ -61,7 +61,7 @@ $(document).ready(function() {
       });
   };
 
-    
+     
   // Submit a new tweet
   $('#new-tweet-form').submit(function(event) {
 
@@ -85,5 +85,7 @@ $(document).ready(function() {
         });
     }
   });
+
+  loadTweets();
 
 });
